@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-interface MemberRepository extends JpaRepository<Member,Long>,MemberService {
+interface MemberRepository extends JpaRepository<Member,Long>, MemberService{
 }
 
 interface MemberService{

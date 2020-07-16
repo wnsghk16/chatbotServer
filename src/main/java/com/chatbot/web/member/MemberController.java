@@ -23,7 +23,6 @@ public class MemberController {
 
     @GetMapping("/")
     public String test(){
-
         JsonObject obj = new JsonObject();
 
         obj.addProperty("title","테스트");

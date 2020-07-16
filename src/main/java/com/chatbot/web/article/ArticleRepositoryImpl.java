@@ -13,7 +13,7 @@ interface ArticleRepository extends JpaRepository<Article,Long>,ArticleService{
 
 interface ArticleService{
 }
-public class ArticleRepositoryImpl extends QuerydslRepositorySupport {
+public class ArticleRepositoryImpl extends QuerydslRepositorySupport implements ArticleService {
     ArticleRepositoryImpl(){
         super(Article.class);
     }

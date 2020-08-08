@@ -9,28 +9,24 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
-interface MemberRepository extends JpaRepository<Member,Long>, MemberService{
+interface IMemberRepository{
+    public List<Object> findAllOrderByJoinDate();
 }
 
-interface MemberService{
-    public List<Object> findeAllOrderByjoinDate();
-}
-
-public class MemberRepositoryImpl extends QuerydslRepositorySupport implements MemberService{
+public class MemberRepositoryImpl extends QuerydslRepositorySupport implements IMemberRepository{
     MemberRepositoryImpl(){
         super(Member.class);
     }
     @Autowired JPAQueryFactory query;
     @Override
-    public List<Object> findeAllOrderByjoinDate() {
-        QMember qMember = QMember.member;
+    public List<Object> findAllOrderByJoinDate() {
+        /*QMember qMember = QMember.member;
         List<Object> result = new ArrayList<>();
         query.from(qMember)
                 .orderBy(qMember.joinDate.asc())
                 .fetch().forEach(arr ->{
                     result.add(arr);
-        });
-        return result;
+        });*/
+        return null;
     }
 }

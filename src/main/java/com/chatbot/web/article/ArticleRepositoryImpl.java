@@ -4,17 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+interface IArticleRepository{}
 
 @Repository
-interface ArticleRepository extends JpaRepository<Article,Long>,ArticleService{
+public class ArticleRepositoryImpl implements IArticleRepository {
 
-}
-
-interface ArticleService{
-}
-public class ArticleRepositoryImpl extends QuerydslRepositorySupport implements ArticleService {
-    ArticleRepositoryImpl(){
-        super(Article.class);
-    }
 }

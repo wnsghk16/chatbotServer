@@ -14,7 +14,7 @@ import java.util.List;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="work_id") private Long id;
+    @Column(name = "work_id") private Long workId;
     @Column(name = "title", nullable = false) private String title;
     @CreationTimestamp
     @Column(name = "write_date") private LocalDateTime writeDate;
@@ -29,7 +29,36 @@ public class Article {
     @Column(name = "write_data_day", nullable = false) private int writeDataDay;
     @Column(name = "kakao", nullable = false) private String kakao;
     @Column(name = "progress_state", nullable = false) private String progressState;
-    @JsonIgnore
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
     private List<Volunteer> volunteers;
+
+    @Builder
+    private Article(String title,
+                    LocalDateTime writeDate,
+                    String recruit,
+                    String workDay,
+                    String workTime,
+                    String workAge,
+                    String cityArea,
+                    int daySalary,
+                    int totalSalary,
+                    String contents,
+                    int writeDataDay,
+                    String kakao, String progressState) {
+        this.title = title;
+        this.writeDate = writeDate;
+        this.recruit = recruit;
+        this.workDay = workDay;
+        this.workTime = workTime;
+        this.workAge = workAge;
+        this.cityArea = cityArea;
+        this.daySalary = daySalary;
+        this.totalSalary = totalSalary;
+        this.contents = contents;
+        this.writeDataDay = writeDataDay;
+        this.kakao = kakao;
+        this.progressState = progressState;
+    }
+
+
 }

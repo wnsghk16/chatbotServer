@@ -4,12 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MemberControllerTest {
-
+class MemberTest {
     @Test
     void getName() {
-        final Member member = Member.builder().name("James").build();
+        final Member member = Member.builder().name("홍길동").build();
         final String name = member.getName();
-        assertEquals("James", name);
+        assertEquals("홍길동", name);
     }
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import au.com.bytecode.opencsv.CSVReader;
+
 public class CsvHandler {
     private String filename = "/mycsv.csv";
 

@@ -13,17 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ProgressControllerTest {
-    @LocalServerPort
-    private int port;
-
-    @Autowired
-    private TestRestTemplate restTemplate;
+    @LocalServerPort private int port;
+    @Autowired private TestRestTemplate restTemplate;
 
     @Test
     public void getHello() throws Exception {
-
-        ResponseEntity<String> response = restTemplate.getForEntity(new URL("http://localhost:" + port + "/").toString(), String.class);
-        assertEquals("Hello Controller", response.getBody());
+        ResponseEntity<String> response = restTemplate.getForEntity(new URL("http://localhost:" + port + "/progresses/hello").toString(), String.class);
+        assertEquals("hello", response.getBody());
 
     }
 }
